@@ -1,12 +1,43 @@
-import './App.css'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {Home, Pricing, About, Services, OrderGuide} from "./pages/index"
+import Layout from './Layout/Layout';
 
 function App() {
 
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout/>,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
+        },
+        {
+          path: "/pricing",
+          element: <Pricing />,
+        },
+        {
+          path: "/orderguide",
+          element: <OrderGuide />,
+        },
+        
+      ],
+    }
+    
+  ]);
+
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>  
+      <RouterProvider router={router} />
     </>
   )
 }
