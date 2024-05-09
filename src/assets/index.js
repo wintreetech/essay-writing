@@ -1,3 +1,3 @@
 import logo from "./logo.svg";
-
-export {logo}
+import yourlogo from "./yourlogo.svg"
+export {logo,yourlogo}
